@@ -271,7 +271,7 @@ class VolumeDataGenerator(keras.utils.Sequence):
 
 def get_labeled_image(image, label, is_categorical=False):
     if not is_categorical:
-        label = to_categorical(label, num_classes=4).astype(np.uint8)
+        label = to_categorical(label, num_classes=5).astype(np.uint8)
 
     image = cv2.normalize(image[:, :, :, 0], None, alpha=0, beta=255,
                           norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_32F).astype(
